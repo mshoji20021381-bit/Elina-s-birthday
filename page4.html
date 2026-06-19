@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نامه برای الینا</title>
+
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background:#0b0014;
+  font-family:sans-serif;
+  color:white;
+  overflow:hidden;
+}
+
+/* نور بنفش */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle at top, rgba(120,0,180,0.25), transparent 60%);
+}
+
+/* مرکز */
+.wrap{
+  position:relative;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:15px;
+  box-sizing:border-box;
+}
+
+/* نامه جمع‌وجورتر */
+.text{
+  max-width:600px;
+  font-size:15px;        /* کوچیک‌تر شد */
+  line-height:1.6;       /* فاصله کمتر */
+  transition:3s;
+  text-shadow:0 0 10px rgba(168,85,247,0.35);
+}
+
+/* جمله آخر */
+.final{
+  position:absolute;
+  opacity:0;
+  font-size:18px;
+  max-width:600px;
+  text-align:center;
+  line-height:1.7;
+  transition:3s;
+  text-shadow:0 0 12px rgba(255,255,255,0.4);
+}
+
+/* دکمه */
+.btn{
+  position:fixed;
+  bottom:50px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:10px 18px;
+  border:1px solid white;
+  background:transparent;
+  color:white;
+  border-radius:25px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="text" id="letter">
+
+الینا...<br>
+امروز هفده ساله شدی.<br>
+هفده سال از روزی می‌گذرد که دنیا صاحب یکی از زیباترین اتفاقاتش شد.<br><br>
+
+شاید خیلی‌ها تو را به خاطر لبخندت بشناسند، شاید خیلی‌ها مهربانی‌ات را دیده باشند، اما من چیزهایی را دوست دارم که کمتر کسی دیده است.<br><br>
+
+صبری که پشت سکوتت پنهان می‌شود...<br>
+قدرتی که پشت روزهای سختت ایستاده...<br>
+قلبی که با وجود تمام زخم‌هایش هنوز مهربان مانده است...<br>
+و وفاداری‌ای که این روزها از هر ستاره‌ای کمیاب‌تر است.<br><br>
+
+نمی‌دانم آینده چه چیزهایی برای ما نوشته...<br>
+اما می‌دانم آشنایی با تو، یکی از قشنگ‌ترین اتفاق‌های زندگی من بوده است.<br><br>
+
+و اگر قرار باشد از میان تمام آرزوهای دنیا فقط یکی را انتخاب کنم،<br>
+آرزو می‌کنم لبخندت هیچ‌وقت خاموش نشود.<br><br>
+
+تولدت مبارک دختر آسمانی من.<br>
+تولدت مبارک دختر توت‌فرنگی من.<br>
+تولدت مبارک الینا. 🍓💜
+
+  </div>
+
+  <div class="final" id="final">
+بعضی آدم‌ها را<br>
+نمی‌شود فقط دوست داشت...<br>
+باید شکرگزار حضورشان بود
+  </div>
+
+</div>
+
+<button class="btn" onclick="start()">✨ ادامه ✨</button>
+
+<script>
+
+function start(){
+  document.getElementById("letter").style.opacity="0";
+
+  setTimeout(()=>{
+    document.getElementById("final").style.opacity="1";
+  },2500);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تولد یک ستاره</title>
+
+<style>
+body{
+  margin:0;
+  overflow:hidden;
+  background:#000; /* مشکی قطعی */
+  font-family:sans-serif;
+}
+
+/* آسمان */
+.sky{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+/* ⭐ ستاره */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  box-shadow:0 0 6px white;
+  animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+  from{opacity:0.1;}
+  to{opacity:1;}
+}
+
+/* متن */
+.title{
+  position:absolute;
+  width:100%;
+  text-align:center;
+  top:40%;
+  color:white;
+  font-size:22px;
+  opacity:0;
+  transition:1s;
+}
+
+/* ELINA */
+.elina{
+  position:absolute;
+  width:100%;
+  text-align:center;
+  top:45%;
+  font-size:60px;
+  font-weight:bold;
+  color:#cbb3ff;
+  text-shadow:0 0 25px #6fa8ff;
+  opacity:0;
+  transition:2s;
+}
+
+/* دکمه */
+.btn{
+  position:absolute;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:12px 22px;
+  border:1px solid white;
+  background:transparent;
+  color:white;
+  border-radius:25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sky" id="sky"></div>
+
+<div class="title" id="t">در یک شب آرام...</div>
+<div class="elina" id="elina">ELINA</div>
+
+<button class="btn" onclick="next()">✨ ادامه ✨</button>
+
+<script>
+
+const sky = document.getElementById("sky");
+
+/* ⭐ اینجا مهمه: ستاره‌ها حتما ساخته میشن */
+for(let i=0;i<400;i++){
+  let s = document.createElement("div");
+  s.className = "star";
+
+  s.style.top = Math.random()*100 + "%";
+  s.style.left = Math.random()*100 + "%";
+
+  let size = Math.random()*2 + 0.5;
+  s.style.width = size + "px";
+  s.style.height = size + "px";
+
+  sky.appendChild(s);
+}
+
+/* متن‌ها */
+setTimeout(()=>{
+  document.getElementById("t").style.opacity=1;
+},600);
+
+setTimeout(()=>{
+  document.getElementById("t").style.opacity=0;
+  document.getElementById("elina").style.opacity=1;
+},2500);
+
+/* رفتن به صفحه بعد */
+function next(){
+  alert("بریم صفحه ۳ 🍓");
+}
+
+</script>
+
+</body>
+</html>
