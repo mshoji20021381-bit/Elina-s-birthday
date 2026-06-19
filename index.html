@@ -1,106 +1,6 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>هفدهمین بهار الینا</title>
-
-<style>
-body{
-  margin:0;
-  overflow:hidden;
-  background:#000;
-  font-family:sans-serif;
-}
-
-.sky{
-  position:absolute;
-  width:100%;
-  height:100%;
-}
-
-/* ⭐ ستاره */
-.star{
-  position:absolute;
-  width:2px;
-  height:2px;
-  background:white;
-  border-radius:50%;
-  box-shadow:0 0 6px white;
-  animation:blink 2s infinite alternate;
-}
-
-@keyframes blink{
-  from{opacity:0.1;}
-  to{opacity:1;}
-}
-
-/* متن */
-.text{
-  position:absolute;
-  width:100%;
-  text-align:center;
-  top:40%;
-  color:white;
-  font-size:20px;
-  opacity:0;
-  transition:1s;
-}
-
-.elina{
-  position:absolute;
-  width:100%;
-  text-align:center;
-  top:45%;
-  font-size:44px;
-  font-weight:bold;
-  color:#cbb3ff;
-  text-shadow:0 0 20px #6fa8ff;
-  opacity:0;
-}
-
-/* 🍓 */
-.berry{
-  position:absolute;
-  font-size:18px;
-  cursor:pointer;
-  animation:float 4s infinite ease-in-out;
-  filter:drop-shadow(0 0 5px #ff4d6d);
-}
-
-@keyframes float{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-15px);}
-  100%{transform:translateY(0);}
-}
-
-/* دکمه */
-.btn{
-  position:absolute;
-  bottom:60px;
-  left:50%;
-  transform:translateX(-50%);
-  padding:12px 22px;
-  border:1px solid white;
-  background:transparent;
-  color:white;
-  border-radius:25px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="sky" id="sky"></div>
-
-<div class="text" id="t1">امشب...</div>
-<div class="text" id="t2">شبی شبیه شب‌های دیگر نیست.</div>
-<div class="text" id="t3">چون هفده سال پیش...</div>
-<div class="text" id="t4">ستاره‌ای به دنیا آمد.</div>
-
-<div class="elina" id="elina">ELINA</div>
-
-<button class="btn">✨ ورود ✨</button>
+<button class="btn" onclick="goNext()">
+✨ ورود ✨
+</button>
 
 <script>
 
@@ -115,7 +15,7 @@ for(let i=0;i<350;i++){
   sky.appendChild(s);
 }
 
-/* 🍓 فقط تزئینی */
+/* 🍓 */
 for(let i=0;i<8;i++){
   let b=document.createElement("div");
   b.className="berry";
@@ -154,7 +54,9 @@ function show(){
 
 show();
 
-</script>
+/* دکمه ورود */
+function goNext(){
+    window.location.href = "page2.html";
+}
 
-</body>
-</html>
+</script>
